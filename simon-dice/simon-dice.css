@@ -1,0 +1,36 @@
+.cuadro{
+    height: 300px;
+    opacity: 0.3;
+    transition: opacity 400ms;
+    border-radius: 25px;
+    border: black 3px solid;
+}
+
+#cuadro-1{
+    background-color: red;
+    margin-bottom: 10px;
+
+}
+
+#cuadro-2{
+    background-color: blue;
+    margin-bottom: 10px;
+
+
+}
+
+#cuadro-3{
+    background-color: yellow;
+    margin-top: 10px;
+
+}
+
+#cuadro-4{
+    background-color: green;
+    margin-top: 10px;
+
+}
+
+#contenedor-1{
+    margin-top: 15px;
+}
