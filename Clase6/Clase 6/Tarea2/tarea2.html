@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="tarea2.css"/>
+    <title>Tarea 2 - Clase 6</title>
+</head>
+<body>
+    <div class="text-center">
+        <em>
+            <h1>Calculadora de salarios</h1>
+            
+            <form id="botones">
+                <Label for="agregar">Agrege o quite un integrante</Label>
+                <div id="botones-div">
+                    <button type="button" id="agregar" class="btn btn-primary">Agregar</button>
+                    <button type="button" id="quitar" class="btn btn-danger">Quitar</button>
+                </div>
+                
+                <div id="integrantes-con-salario">
+                    
+                </div>
+                
+                <button type="button" class="btn btn-success oculto" id="calcular">Calcular</button>
+                
+                <div class="oculto alert alert-success" role="alert" id="resultados-calcular">
+                    <p>El salario menor mensual es <strong id="salario-menor-mensual"></strong></p>
+                    <p>El salario mayor mensual es <strong id="salario-mayor-mensual"></strong></p>
+                    <p>El promedio de salario mensual es <strong id="salario-promedio-mensual"></strong></p>
+                    <p>El promedio de salario anual es <strong id="salario-promedio-anual"></strong></p>
+                </div>
+            </form>
+        </em>
+            
+        <em>
+            <ul id ="errores" class="alert alert-danger oculto" role="alert">
+            </ul>
+        </em>
+    </div>
+        
+    <script src="pruebas.js"></script>
+    <script src="calculos.js"></script>
+    <script src="tarea2.js"></script>
+</body>
+</html>

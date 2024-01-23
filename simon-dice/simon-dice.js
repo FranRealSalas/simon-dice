@@ -2,17 +2,34 @@ let secuenciaMaquina = [];
 let secuenciaUsuario = [];
 let ronda = 0;
 
+ocultarTablero();
+
 document.querySelector('#boton-empezar').onclick = comenzarJuego;
 
-console.log("asd");
-
-actualizarEstado('Toca "Empezar" para jugar!')
+mostrarInputObjetivo();
+actualizarEstado('Ingresa el objetivo y toca "Empezar" para jugar!')
 actualizarRonda('-');
 bloquearInputUsuario();
 
 function comenzarJuego(){
-    reiniciarEstado();
-    manejarRonda();
+    ocultarInputObjetivo();
+    ocultarMensajeObjetivo();
+    const objetivo = Number(document.querySelector('#objetivo').value);
+    
+    if(objetivo===0){
+        ocultarTablero();
+        mostrarInputObjetivo();
+        actualizarEstado("Debe seleccionar un objetivo de rondas!");
+    }
+    else if(objetivo<0){
+        mostrarInputObjetivo();
+        actualizarEstado("Debe utilizar un numero mayor a 0!");
+    }
+    else{
+        mostrarTablero();
+        reiniciarEstado();
+        manejarRonda();
+    }
 }
 
 function reiniciarEstado(){
@@ -33,7 +50,7 @@ function manejarRonda(){
     secuenciaMaquina.forEach(function($cuadro, index){
         const retraso_ms = (index+1)*1000;
         setTimeout(function(){
-            resaltar($cuadro)
+            resaltar($cuadro);
         }, retraso_ms);
     });
 
@@ -64,7 +81,7 @@ function manejarInputUsuario(e){
     }
 }
 
-function actualizarEstado(estado,error = false){
+function actualizarEstado(estado, error = false){
     const $estado = document.querySelector("#estado");
     $estado.textContent = estado;
     if(error){
@@ -102,13 +119,69 @@ function desbloquearInputUsuario() {
     document.querySelectorAll('.cuadro').forEach(function($cuadro) {
       $cuadro.onclick = manejarInputUsuario;
     });
-  }
+}
 
 function perder(){
+    mostrarMensajeObjetivo();
+    mostrarInputObjetivo();
+    const ronda = document.querySelector("#ronda").textContent;
+    const objetivo = Number(document.querySelector("#objetivo").value);
+
+    if(ronda>objetivo){
+        actualizarMensajeObjetivo("Superaste tu objetivo!");
+    }
+    else{
+        actualizarMensajeObjetivo("No superaste tu objetivo!", true);
+    }
     bloquearInputUsuario();
-    actualizarEstado('Perdiste! toca "empezar" para jugar de nuevo', true);
+    ocultarTablero();
+    actualizarEstado('Perdiste! Toca "Empezar" para jugar de nuevo', true);
+}
+
+function actualizarMensajeObjetivo(mensajeObjetivo, error){
+    const $mensajeObjetivo = document.querySelector("#mensaje-objetivo");
+    $mensajeObjetivo.textContent = mensajeObjetivo;
+    if(error){
+        $mensajeObjetivo.classList.remove("alert-success");
+        $mensajeObjetivo.classList.add("alert-danger");
+    }
+    else{
+        $mensajeObjetivo.classList.remove("alert-danger");
+        $mensajeObjetivo.classList.add("alert-success");
+    }
+}
+
+function ocultarMensajeObjetivo(){
+    document.querySelector("#mensaje-objetivo").classList.add("oculto");
+
+}
+
+function mostrarMensajeObjetivo(){
+    document.querySelector("#mensaje-objetivo").classList.remove("oculto");
+
 }
 
 function actualizarRonda(){
     document.querySelector('#ronda').textContent = ronda;
+}
+
+function ocultarTablero(){
+    document.querySelector("#tablero").classList.add("oculto");
+    document.querySelector("#ronda").classList.add("oculto");
+    document.querySelector("#ronda-texto").classList.add("oculto");
+
+}
+
+function mostrarTablero(){
+    document.querySelector("#tablero").classList.remove("oculto");
+    document.querySelector("#ronda").classList.remove("oculto");
+    document.querySelector("#ronda-texto").classList.remove("oculto");
+}
+
+function ocultarInputObjetivo(){
+    document.querySelector("#div-objetivo").classList.add("oculto");
+}
+
+function mostrarInputObjetivo(){
+    document.querySelector("#div-objetivo").classList.remove("oculto");
 }

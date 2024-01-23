@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="main.css"/>
+
+    <title>Tarea clase 6</title>
+</head>
+<body>
+    <div class = "text-center">
+    <em><h1 class="fs-1">Calcule el promedio de edad de su familia</h1></em>
+
+    <form id="calcular-edades">
+        <div id="cantidad-integrantes-input">
+            <em><label for="cantidad-integrantes">Cantidad de integrantes de la familia</label></em>
+            <id>
+                <input type="number" id="cantidad-integrantes" min=0>
+            </id>
+        </div>
+
+        <em>
+            <div id="integrantes-familia">
+            </div>
+        </em>
+
+        <div id="botones">
+            <button type="button" id="calcular" class="btn btn-primary oculto">Calcular</button>
+            <button type="submit" id="boton-siguiente" class="btn btn-primary">Siguiente</button>
+            <button type="reset" id="boton-reset" class="btn btn-primary">Reiniciar</button>
+        </div>
+        
+        <div id="resultados-calculo" class="alert alert-success oculto" role="alert">
+            <em>
+                    <p>La mayor edad es: <strong id="edad-mayor"></strong></p>
+                    <p>La menor edad es: <strong id="edad-menor"></strong></p>
+                    <p>El promedio de edad es: <strong id="edad-promedio"></strong></p>
+            </em>
+        </div>
+
+        <ul id ="errores" class="alert alert-danger oculto" role="alert">
+        </ul>
+
+    </form>
+    </div>
+    
+    <script src="pruebas.js"></script>
+    <script src="calculos.js"></script>
+    <script src="tarea-clase-6.js"></script>
+</body>
+</html>

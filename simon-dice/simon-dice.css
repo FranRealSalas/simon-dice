@@ -8,29 +8,39 @@
 
 #cuadro-1{
     background-color: red;
+    margin-top: 15px;
     margin-bottom: 10px;
-
 }
 
 #cuadro-2{
     background-color: blue;
+    margin-top: 15px;
     margin-bottom: 10px;
-
-
 }
 
 #cuadro-3{
     background-color: yellow;
     margin-top: 10px;
-
 }
 
 #cuadro-4{
     background-color: green;
     margin-top: 10px;
-
 }
 
 #contenedor-1{
     margin-top: 15px;
+}
+
+.oculto{
+    display: none;
+}
+
+#div-objetivo{
+    margin-top: 15px;
+}
+
+#mensaje-objetivo{
+    margin: 20px;
+    margin-top: 20px;
 }

@@ -1,0 +1,24 @@
+.oculto {
+    display: none;
+}
+
+#resultados-calculo {
+    margin: 15px;
+}
+
+.integrantes{
+    margin: 10px;
+}
+
+.cantidad-integrantes-input{
+    margin: 10px;
+    border-radius: 20px;
+}
+
+#botones{
+    margin: 10px;
+}
+
+li{
+    list-style: none;
+}

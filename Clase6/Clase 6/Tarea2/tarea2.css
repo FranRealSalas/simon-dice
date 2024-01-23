@@ -1,0 +1,23 @@
+.oculto {
+    display: none;
+}
+
+.salarios-input{
+    margin: 10px;
+}
+
+li{
+    list-style: none;
+}
+
+#errores{
+    margin: 10px;
+}
+
+#botones-div{
+    margin: 10px;
+}
+
+#resultados-calcular{
+    margin-top: 10px;
+}
